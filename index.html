@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" ng-app>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title></title>
+		<link rel="stylesheet" href="css/base.css">
+	</head>
+	<!--pour spécifier que c'est une application angullar-->
+	<body ng-controller="SongCtrl">
+		<section id="todoapp" >
+			<header id="header">
+				<h1>Liste musicale</h1>
+				<form id="todo-form" ng-submit="addSong()">
+					<input type="text" id="new-todo" ng-model="newsong" autofocus >
+				</form>
+			</header>
+			<section id="main">
+				<ul id="todo-list">
+					<li ng-repeat="song in songs">
+						<div class="view">
+							<label> {{song.name}}</label>
+							<button class="destroy" ng-click="removeSong($index)"></button>
+						</div>
+						<form>
+							<input class="edit">
+						</form>
+					</li>
+				</ul>
+			</section>
+			<footer id="footer">
+				<span id="todo-count"><strong>{{count}}</strong> Morceaux</span>
+			</footer>
+		</section>
+	
+		<script src="scripts/app.js"></script>
+		<script src="scripts/angular.js"></script>
+	</body>
+</html>
